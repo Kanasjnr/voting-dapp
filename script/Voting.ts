@@ -36,6 +36,14 @@ async function main() {
 
   console.log("All Proposal created", allCreatedProposals);
 
-  const 
+  
+  
   
 }
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
