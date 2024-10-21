@@ -35,5 +35,7 @@ async function main() {
   const allCreatedProposals = await proposalVoting.getAllProposals();
 
   console.log("All Proposal created", allCreatedProposals);
+
+  const 
   
 }
