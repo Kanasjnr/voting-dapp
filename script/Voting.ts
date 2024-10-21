@@ -12,9 +12,6 @@ async function main() {
     contractAddress
   );
 
-
-
-
   const createProposal = await proposalVoting
     .connect(signer)
     .createProposal(
@@ -27,11 +24,13 @@ async function main() {
 
   console.log("proposal created successfully");
 
-
-  const votingOnProposal = await proposalVoting.connect(signer).voteOnProposal(0);
+  const votingOnProposal = await proposalVoting
+    .connect(signer)
+    .voteOnProposal(0);
 
   await votingOnProposal.wait();
 
   console.log("You have voted on proposal");
-  
+
+  const allCreatedProposals
 }
