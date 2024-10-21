@@ -37,7 +37,20 @@ async function main() {
   console.log("All Proposal created", allCreatedProposals);
 
   
+  const proposalCreated = await proposalVoting.getProposal(0);
+
+  console.log("proposal has been created", {
+    name: proposalCreated.name_,
+    description: proposalCreated.desc_,
+    quorum: proposalCreated.quorum_,
+    voters: proposalCreated.voters_,
+    count: proposalCreated.Count_.toString(),
+    status: proposalCreated.status_
+
+
+  });
   
+
   
 }
 
