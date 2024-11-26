@@ -21,12 +21,12 @@ contract ProposalVote {
     mapping(address voter => mapping(uint8 indexOfProps => bool)) hasVoted;
 
     Proposal[] public proposals;
-    // Proposal[] public approvedPropasal;
+    Proposal[] public approvedPropasal;
 
     // events
-    event ProposalCreated(string indexed name, uint16 quorum);
-    event ProposalApproved(string indexed name, uint16 count);
-    event ProposalActive(string indexed name, uint16 count);
+    event ProposalCreated(string name, string description, uint16 quorum);
+    event ProposalApproved(string name, uint16 count);
+    event ProposalActive(string name, uint16 count);
 
     function createProposal(
         string memory _name,
@@ -44,7 +44,7 @@ contract ProposalVote {
 
         proposals.push(newProposal);
 
-        emit ProposalCreated(_name, _quorum);
+        emit ProposalCreated(_name, _desc, _quorum);
     }
 
     function voteOnProposal(uint8 _index) external {

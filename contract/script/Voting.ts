@@ -4,8 +4,8 @@ async function main() {
   const contractAddress = "0x2156842Af186bA8B9B232d4dB58ADDb016969FE5";
 
   const account = "0xF1240B5C1C468aA68Bd77DCFAf10d6d46E9CB8Ea";
-  const account2= "0xF3709C87432488B6aAEb9629cf5cb5BA6Db793F0"
-  const account3 = "0x1853E7DE95130a304e4dF355CF8aB7AE80160189"
+  const account2 = "0xF3709C87432488B6aAEb9629cf5cb5BA6Db793F0";
+  const account3 = "0x1853E7DE95130a304e4dF355CF8aB7AE80160189";
 
   const signer = await hre.ethers.getSigner(account);
   const signer1 = await hre.ethers.getSigner(account2);
@@ -27,7 +27,6 @@ async function main() {
   await createProposal.wait();
 
   console.log("proposal created successfully");
-  
 
   const votingOnProposal = await proposalVoting
     .connect(signer)
@@ -48,13 +47,10 @@ async function main() {
 
   console.log("You have voted on proposal");
 
-
-
   const allCreatedProposals = await proposalVoting.getAllProposals();
 
   console.log("All Proposal created", allCreatedProposals);
 
-  
   const proposalCreated = await proposalVoting.getProposal(0);
 
   console.log("proposal has been created", {
@@ -63,13 +59,8 @@ async function main() {
     quorum: proposalCreated.quorum_,
     voters: proposalCreated.voters_,
     count: proposalCreated.Count_.toString(),
-    status: proposalCreated.status_
-
-
+    status: proposalCreated.status_,
   });
-  
-
-  
 }
 
 main()

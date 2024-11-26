@@ -1,0 +1,223 @@
+ [
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint16",
+            "name": "count",
+            "type": "uint16"
+          }
+        ],
+        "name": "ProposalActive",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint16",
+            "name": "count",
+            "type": "uint16"
+          }
+        ],
+        "name": "ProposalApproved",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint16",
+            "name": "quorum",
+            "type": "uint16"
+          }
+        ],
+        "name": "ProposalCreated",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "_name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "_desc",
+            "type": "string"
+          },
+          {
+            "internalType": "uint16",
+            "name": "_quorum",
+            "type": "uint16"
+          }
+        ],
+        "name": "createProposal",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getAllProposals",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "internalType": "uint16",
+                "name": "voteCount",
+                "type": "uint16"
+              },
+              {
+                "internalType": "address[]",
+                "name": "voters",
+                "type": "address[]"
+              },
+              {
+                "internalType": "uint16",
+                "name": "quorum",
+                "type": "uint16"
+              },
+              {
+                "internalType": "enum ProposalVote.PropsStatus",
+                "name": "status",
+                "type": "uint8"
+              }
+            ],
+            "internalType": "struct ProposalVote.Proposal[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_index",
+            "type": "uint8"
+          }
+        ],
+        "name": "getProposal",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "name_",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "desc_",
+            "type": "string"
+          },
+          {
+            "internalType": "uint16",
+            "name": "quorum_",
+            "type": "uint16"
+          },
+          {
+            "internalType": "address[]",
+            "name": "voters_",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint16",
+            "name": "Count_",
+            "type": "uint16"
+          },
+          {
+            "internalType": "enum ProposalVote.PropsStatus",
+            "name": "status_",
+            "type": "uint8"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "proposals",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "uint16",
+            "name": "voteCount",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "quorum",
+            "type": "uint16"
+          },
+          {
+            "internalType": "enum ProposalVote.PropsStatus",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_index",
+            "type": "uint8"
+          }
+        ],
+        "name": "voteOnProposal",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ]
